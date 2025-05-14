@@ -7,18 +7,18 @@ import highBoard from "src/images/high-board.jpg";
 
 <main>
   <section
-    class="loading-fade-in h-screen bg-cover bg-center pt-32 pb-8 flex flex-col justify-between"
+    class="loading-fade-in flex h-screen flex-col justify-between bg-cover bg-center pt-32 pb-8"
     style={`background-image: url(${hero.src})`}
   >
     <h1
-      class="font-[Comfortaa_Variable] font-light text-5xl text-[#C2AA6A] text-center text-shadow-lg"
+      class="text-center font-[Comfortaa_Variable] text-5xl font-light text-[#C2AA6A] text-shadow-lg"
     >
       Boutique
       <br />
       Werkstatt
     </h1>
     <span
-      class="font-[Comfortaa_Variable] font-light text-2xl text-[#04040C] text-center text-shadow-lg"
+      class="text-center font-[Comfortaa_Variable] text-2xl font-light text-[#04040C] text-shadow-lg"
     >
       handgefertigte
       <br />
@@ -27,19 +27,19 @@ import highBoard from "src/images/high-board.jpg";
       aus 100% Massivholz
     </span>
   </section>
-  <section class="p-6 flex flex-col gap-y-8">
-    <div class="scroll-fade-in flex flex-col gap-y-4 items-start">
+  <section class="flex flex-col gap-y-8 p-6">
+    <div class="scroll-fade-in flex flex-col items-start gap-y-4">
       <Image src={tisch} alt="Hero Image" class="rounded-lg relative" />
       <span
-        class="font-[Comfortaa_Variable] font-light text-xl text-[#ffffff] absolute bottom-4 left-4 text-shadow-lg"
+        class="absolute bottom-4 left-4 font-[Comfortaa_Variable] text-xl font-light text-[#ffffff] text-shadow-lg"
       >
         Couchtisch <br /> "Floating Braunglas"</span
       >
     </div>
-    <div class="scroll-fade-in flex flex-col gap-y-4 items-start">
+    <div class="scroll-fade-in flex flex-col items-start gap-y-4">
       <Image src={highBoard} alt="Hero Image" class="rounded-lg" />
       <span
-        class="font-[Comfortaa_Variable] font-light text-xl text-[#ffffff] absolute bottom-4 left-4 text-shadow-lg"
+        class="absolute bottom-4 left-4 font-[Comfortaa_Variable] text-xl font-light text-[#ffffff] text-shadow-lg"
       >
         High Board <br /> "Shades of Green"</span
       >
@@ -49,16 +49,16 @@ import highBoard from "src/images/high-board.jpg";
 
 <style>
   .loading-fade-in {
-    animation-duration: 2s;
     animation-delay: 0s;
-    animation-timing-function: ease-out;
+    animation-duration: 2s;
     animation-iteration-count: 1;
     animation-name: fade-in;
+    animation-timing-function: ease-out;
   }
   .scroll-fade-in {
-    animation-timeline: view();
     animation-name: fade-in;
     animation-range: entry;
+    animation-timeline: view();
   }
 
   @keyframes fade-in {
