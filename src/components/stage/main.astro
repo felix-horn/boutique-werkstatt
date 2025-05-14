@@ -1,21 +1,24 @@
 ---
+import { Image } from "astro:assets";
 import hero from "src/images/hero.jpg";
+import tisch from "src/images/tisch.jpg";
+import highBoard from "src/images/high-board.jpg";
 ---
 
 <main>
   <section
-    class="h-[90vh] bg-cover bg-center pt-32 pb-8 flex flex-col justify-between"
+    class="loading-fade-in flex h-screen flex-col justify-between bg-cover bg-center pt-32 pb-8"
     style={`background-image: url(${hero.src})`}
   >
     <h1
-      class="font-[Comfortaa_Variable] font-light text-5xl text-[#C2AA6A] text-center text-shadow-lg"
+      class="text-center font-[Comfortaa_Variable] text-5xl font-light text-[#C2AA6A] text-shadow-lg"
     >
       Boutique
       <br />
       Werkstatt
     </h1>
     <span
-      class="font-[Comfortaa_Variable] font-light text-2xl text-[#04040C] text-center text-shadow-lg"
+      class="text-center font-[Comfortaa_Variable] text-2xl font-light text-[#04040C] text-shadow-lg"
     >
       handgefertigte
       <br />
@@ -24,5 +27,48 @@ import hero from "src/images/hero.jpg";
       aus 100% Massivholz
     </span>
   </section>
-  <section class="h-screen"></section>
+  <section class="flex flex-col gap-y-8 p-6">
+    <div class="scroll-fade-in flex flex-col items-start gap-y-4">
+      <Image src={tisch} alt="Hero Image" class="rounded-lg relative" />
+      <span
+        class="absolute bottom-4 left-4 font-[Comfortaa_Variable] text-xl font-light text-[#ffffff] text-shadow-lg"
+      >
+        Couchtisch <br /> "Floating Braunglas"</span
+      >
+    </div>
+    <div class="scroll-fade-in flex flex-col items-start gap-y-4">
+      <Image src={highBoard} alt="Hero Image" class="rounded-lg" />
+      <span
+        class="absolute bottom-4 left-4 font-[Comfortaa_Variable] text-xl font-light text-[#ffffff] text-shadow-lg"
+      >
+        High Board <br /> "Shades of Green"</span
+      >
+    </div>
+  </section>
 </main>
+
+<style>
+  .loading-fade-in {
+    animation-delay: 0s;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-name: fade-in;
+    animation-timing-function: ease-out;
+  }
+  .scroll-fade-in {
+    animation-name: fade-in;
+    animation-range: entry;
+    animation-timeline: view();
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
